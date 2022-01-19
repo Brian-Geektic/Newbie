@@ -255,6 +255,34 @@
         "runtime": {
           "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "Newbie.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.13",
+          "Pomelo.EntityFrameworkCore.MySql": "5.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Newbie.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Newbie.Repositories.dll": {}
+        }
+      },
+      "Newbie.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Newbie.Repositories": "1.0.0",
+          "Pomelo.EntityFrameworkCore.MySql": "5.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Newbie.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Newbie.Services.dll": {}
+        }
       }
     }
   },
@@ -817,6 +845,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Newbie.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../Newbie.Repositories/Newbie.Repositories.csproj",
+      "msbuildProject": "../Newbie.Repositories/Newbie.Repositories.csproj"
+    },
+    "Newbie.Services/1.0.0": {
+      "type": "project",
+      "path": "../Newbie.Services/Newbie.Services.csproj",
+      "msbuildProject": "../Newbie.Services/Newbie.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -824,6 +862,7 @@
       "Microsoft.EntityFrameworkCore >= 5.0.13",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.13",
+      "Newbie.Services >= 1.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 5.0.3"
     ]
   },
@@ -861,7 +900,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\GeekticCode\\NewbieProject\\Newbie\\Newbie.Services\\Newbie.Services.csproj": {
+              "projectPath": "D:\\GeekticCode\\NewbieProject\\Newbie\\Newbie.Services\\Newbie.Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

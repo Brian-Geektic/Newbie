@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "76n3MXVMrgsUCpQnEsQ26axW6j6M214DY/lM3eLoSMf9kGGjzUtPCq5bAtD9wZkPLkZCgkgCxHXMe12ZxFreLg==",
+  "dgSpecHash": "wbBQHFnhw7+2xyVjiaG8kXZ6+jVOBI6nOolgQ9SOSfpk7auAW4FtgS2xu22rpt/kMf9oyL+ACFxX6/OxBC2e1Q==",
   "success": true,
   "projectFilePath": "D:\\GeekticCode\\NewbieProject\\Newbie\\Newbie.Services\\Newbie.Services.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
-    "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
-    "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.10\\microsoft.entityframeworkcore.analyzers.5.0.10.nupkg.sha512",
+    "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.13\\microsoft.entityframeworkcore.5.0.13.nupkg.sha512",
+    "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.13\\microsoft.entityframeworkcore.abstractions.5.0.13.nupkg.sha512",
+    "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.13\\microsoft.entityframeworkcore.analyzers.5.0.13.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.10\\microsoft.entityframeworkcore.relational.5.0.10.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",

@@ -8,6 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
+using Newbie.Repositories.Data;
 
 namespace Newbie.Web
 {
@@ -24,6 +27,10 @@ namespace Newbie.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<NewbiedbContext>(options =>
+            {
+                options.UseMySql(Configuration.GetConnectionString("connectNewbie"), ServerVersion.Parse("10.6.5-mariadb"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
