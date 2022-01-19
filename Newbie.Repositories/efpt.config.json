@@ -1,0 +1,58 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "NewbiedbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "Newbie.Repositories",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "article",
+         "ObjectType": 0
+      },
+      {
+         "Name": "authorization",
+         "ObjectType": 0
+      },
+      {
+         "Name": "members_private",
+         "ObjectType": 0
+      },
+      {
+         "Name": "members_public",
+         "ObjectType": 0
+      },
+      {
+         "Name": "roles",
+         "ObjectType": 0
+      },
+      {
+         "Name": "role_article",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": ".newbiedb",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}
