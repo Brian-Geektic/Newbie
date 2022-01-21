@@ -9,35 +9,19 @@ namespace Newbie.Repositories.Interfaces
 {
     public interface INewbieRepository<T> where T : class
     {
-        /// <summary>
-        /// 新增一筆資料
-        /// </summary>
-        /// <param name="entity"></param>
+        // 新增一筆資料       
         void Create(T entity);
 
-        /// <summary>
-        /// 取得全部資料
-        /// </summary>
-        /// <returns></returns>
+        // 取得全部資料        
         Task<ICollection<T>> GetAllAsync();
 
-        /// <summary>
-        /// 取得單筆資料
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns></returns>
-        Task<T> GetAsync(Expression<Func<T, bool>> predicate);
+        // 取得單筆資料
+        Task<T> GetByIdAsync(Expression<Func<T, bool>> predicate);
 
-        /// <summary>
-        /// 刪除資料
-        /// </summary>
-        /// <param name="entity"></param>
+        // 刪除資料
         void Delete(T entity);
 
-        /// <summary>
-        /// 更新資料
-        /// </summary>
-        /// <param name="entity"></param>
+        // 更新資料
         void Update(T entity);
     }
 }

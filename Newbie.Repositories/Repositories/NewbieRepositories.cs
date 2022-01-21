@@ -14,17 +14,17 @@ namespace Newbie.Repositories.Repositories
     public class NewbieRepositories<T> : INewbieRepository<T> where T : class
     {
         /// <summary>
-        /// 設定UnitOfWork實體
+        /// UnitOfWork實體
         /// </summary>
-        private readonly IUnitOfwork _unitOfwork;
+        private readonly INewbieUnitOfwork _unitOfwork;
        
         /// <summary>
         /// 實作unitOfWork
         /// </summary>
         /// <param name="context"></param>
-        public NewbieRepositories(IUnitOfwork unitOfwork)
+        public NewbieRepositories(INewbieUnitOfwork unitOfwork)
         {
-            this._unitOfwork = unitOfwork;
+            _unitOfwork = unitOfwork;
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Newbie.Repositories.Repositories
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public async Task<T> GetAsync(Expression<Func<T,bool>> predicate)
+        public async Task<T> GetByIdAsync(Expression<Func<T,bool>> predicate)
         {
             return await _unitOfwork.Context.Set<T>().FirstOrDefaultAsync(predicate);
         }
