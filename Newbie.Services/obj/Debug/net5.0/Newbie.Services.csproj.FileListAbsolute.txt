@@ -1,0 +1,15 @@
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\bin\Debug\net5.0\Newbie.Services.deps.json
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\bin\Debug\net5.0\Newbie.Services.dll
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\bin\Debug\net5.0\ref\Newbie.Services.dll
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\bin\Debug\net5.0\Newbie.Services.pdb
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\bin\Debug\net5.0\Newbie.Repositories.dll
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\bin\Debug\net5.0\Newbie.Repositories.pdb
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\Newbie.Services.csproj.AssemblyReference.cache
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\Newbie.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\Newbie.Services.AssemblyInfoInputs.cache
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\Newbie.Services.AssemblyInfo.cs
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\Newbie.Services.csproj.CoreCompileInputs.cache
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\Newbie.Services.csproj.CopyComplete
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\Newbie.Services.dll
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\ref\Newbie.Services.dll
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Services\obj\Debug\net5.0\Newbie.Services.pdb

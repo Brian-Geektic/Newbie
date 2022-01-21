@@ -1,6 +1,11 @@
-﻿@{
+﻿@model Newbie.Repositories.Models.Article;
+@{
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>測試從資料庫抓資料</p>
+<p>文章ID:@Model.ArticleId</p>
+<p>文章標題:@Model.Title</p>
+<p>文章內容:@Model.Content</p>
+<p>文章作者:@Model.Author</p>

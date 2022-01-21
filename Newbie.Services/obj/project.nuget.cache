@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wbBQHFnhw7+2xyVjiaG8kXZ6+jVOBI6nOolgQ9SOSfpk7auAW4FtgS2xu22rpt/kMf9oyL+ACFxX6/OxBC2e1Q==",
+  "dgSpecHash": "runDYhB8p8FaCRdM/4IghWM/FZLOOSfqcWopb8UDU4X2+JdaZ7sVyLAF1nUA7NQho3omZOnPSvM2LORn+ibIyw==",
   "success": true,
   "projectFilePath": "D:\\GeekticCode\\NewbieProject\\Newbie\\Newbie.Services\\Newbie.Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kukam\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\kukam\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.13\\microsoft.entityframeworkcore.5.0.13.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.13\\microsoft.entityframeworkcore.abstractions.5.0.13.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.13\\microsoft.entityframeworkcore.analyzers.5.0.13.nupkg.sha512",

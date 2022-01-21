@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ss6jbonXoYmFY+dw5nqGnZYhhDql3sTRJKo/OKx9Tist8Ah1uBOjxRiRGfcaX+LF4ac15ObkNXnsruc1fITkSg==",
+  "dgSpecHash": "eaidbVkPDKHw+M8sZgEYh2j6Sx75CjgFS4XMrijJlmid6dSns1l+XinODCAECgcuRkBP0LorUpwZh9aR27/Vjw==",
   "success": true,
   "projectFilePath": "D:\\GeekticCode\\NewbieProject\\Newbie\\Newbie.Repositories\\Newbie.Repositories.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kukam\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kukam\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.13\\microsoft.entityframeworkcore.5.0.13.nupkg.sha512",
