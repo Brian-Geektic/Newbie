@@ -18,5 +18,6 @@ namespace Newbie.Services.Interfaces
         Task<T> GetAsync(Expression<Func<T, bool>> predicate);
         void Delete(T entity);
         void Update(T entity);
+        void SaveChanges();
     }
 }

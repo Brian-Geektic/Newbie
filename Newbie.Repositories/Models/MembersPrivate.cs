@@ -9,9 +9,10 @@ using Microsoft.EntityFrameworkCore;
 namespace Newbie.Repositories.Models
 {
     [Table("members_private")]
+    [Index(nameof(MemberId), Name = "member_id")]
     public partial class MembersPrivate
     {
-        [Key]
+        [Required]
         [Column("member_id")]
         [StringLength(50)]
         public string MemberId { get; set; }
@@ -41,5 +42,8 @@ namespace Newbie.Repositories.Models
         [Column("qualifystatus")]
         [StringLength(10)]
         public string Qualifystatus { get; set; }
+        [Key]
+        [Column("membersprivate_id", TypeName = "int(11)")]
+        public int MembersprivateId { get; set; }
     }
 }

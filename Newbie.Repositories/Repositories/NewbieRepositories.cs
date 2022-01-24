@@ -13,50 +13,36 @@ namespace Newbie.Repositories.Repositories
 {
     public class NewbieRepositories<T> : INewbieRepository<T> where T : class
     {
-        /// <summary>
-        /// UnitOfWork實體
-        /// </summary>
-        private readonly INewbieUnitOfwork _unitOfwork;
-       
-        /// <summary>
-        /// 實作unitOfWork
-        /// </summary>
-        /// <param name="context"></param>
-        public NewbieRepositories(INewbieUnitOfwork unitOfwork)
+        private NewbiedbContext _context { get; set; }
+        public NewbieRepositories(NewbiedbContext context)
         {
-            _unitOfwork = unitOfwork;
-        }
+            if (context == null)
+                throw new ArgumentNullException("context");
+            this._context = context;
+        } 
+        
 
-        /// <summary>
         /// 新增一筆資料
-        /// </summary>
-        /// <param name="entity"></param>
         public void Create(T entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
-            _unitOfwork.Context.Set<T>().Add(entity);
+            _context.Set<T>().Add(entity);
+            SaveChanges();
         }
 
-        /// <summary>
         /// 取得所有資料
-        /// </summary>
-        /// <returns></returns>
-        public async Task<ICollection<T>> GetAllAsync()
+        public IQueryable<T> GetAll()
         {
-            return await _unitOfwork.Context.Set<T>().ToListAsync();
+            return _context.Set<T>().AsQueryable();
         }
 
-        /// <summary>
         /// 取得單筆資料,若取得多筆也只傳入第一筆資料
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns></returns>
-        public async Task<T> GetByIdAsync(Expression<Func<T,bool>> predicate)
+        public T GetById(Expression<Func<T, bool>> predicate)
         {
-            return await _unitOfwork.Context.Set<T>().FirstOrDefaultAsync(predicate);
+            return _context.Set<T>().FirstOrDefault(predicate);
         }
 
         /// <summary>
@@ -70,18 +56,43 @@ namespace Newbie.Repositories.Repositories
                 throw new ArgumentNullException("entity");
             }
             //_context.Set<T>().Remove(entity);
-            _unitOfwork.Context.Entry(entity).State = EntityState.Deleted;
+            _context.Entry(entity).State = EntityState.Deleted;
+            SaveChanges();
         }
 
         public void Update(T entity)
         {
-            if(entity == null)
+            if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
             //_context.Set<T>().Update(entity);
-            _unitOfwork.Context.Entry(entity).State = EntityState.Modified;
-
+            _context.Entry(entity).State = EntityState.Modified;
+            SaveChanges();
         }
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
+
+        public bool disposed = false;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
     }
 }

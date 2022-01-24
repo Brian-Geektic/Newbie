@@ -9,14 +9,10 @@ using Microsoft.EntityFrameworkCore;
 namespace Newbie.Repositories.Models
 {
     [Table("members_public")]
+    [Index(nameof(MemberId), Name = "member_id")]
     public partial class MembersPublic
     {
-        public MembersPublic()
-        {
-            Roles = new HashSet<Role>();
-        }
-
-        [Key]
+        [Required]
         [Column("member_id")]
         [StringLength(50)]
         public string MemberId { get; set; }
@@ -40,8 +36,8 @@ namespace Newbie.Repositories.Models
         public string Intro { get; set; }
         [Column("joindate", TypeName = "date")]
         public DateTime Joindate { get; set; }
-
-        [InverseProperty(nameof(Role.Member))]
-        public virtual ICollection<Role> Roles { get; set; }
+        [Key]
+        [Column("memberspublic_id", TypeName = "int(11)")]
+        public int MemberspublicId { get; set; }
     }
 }

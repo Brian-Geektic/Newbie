@@ -14,7 +14,6 @@ namespace Newbie.Repositories.Models
         public Authorization()
         {
             RoleArticles = new HashSet<RoleArticle>();
-            RolesNavigation = new HashSet<Role>();
         }
 
         [Key]
@@ -43,7 +42,5 @@ namespace Newbie.Repositories.Models
 
         [InverseProperty(nameof(RoleArticle.Authorization))]
         public virtual ICollection<RoleArticle> RoleArticles { get; set; }
-        [InverseProperty(nameof(Role.Authorization))]
-        public virtual ICollection<Role> RolesNavigation { get; set; }
     }
 }

@@ -8,41 +8,20 @@ using Newbie.Repositories.Data;
 using Newbie.Repositories.Models;
 using Newbie.Repositories.Interfaces;
 using AutoMapper;
-
-
+using Newbie.Repositories.Repositories;
 
 namespace Newbie.Services.Services
 {
-    public class NewbieServices : INewbieServices
+    public class NewbieServices<T> : INewbieServices<T> where T : class
     {
-        private INewbieRepository<Article> _articleRepositories;
-        private IMapper _mapper;
-        private INewbieUnitOfwork _unitofwork;
-        
-        //建立新的新的實體
-        public NewbieServices(
-            INewbieUnitOfwork unitofwork,
-            INewbieRepository<Article> articlerepository,
-            Mapper mapper)
+        private NewbieRepositories _newbieRepositories;
+        public NewbieServices(NewbieRepositories newbieRepositories)
         {
-            _unitofwork = unitofwork;
-            _articleRepositories = articlerepository;
-            _mapper = mapper;
+            this._newbieRepositories = newbieRepositories;
         }
-
-        public async Task<int> Create(ArticleDto articleDto)
+        public void Create(T entity)
         {
-            var article = _mapper.Map<Article>(articleDto);
-            _articleRepositories.Create(article);
-            return await this._unitofwork.SaveChangeAsync();
+
         }
-
-        //Create
-
-        //GetAllAsync
-        //GetAsync
-        //Delete
-        //Update
-
     }
 }

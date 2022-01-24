@@ -27,6 +27,15 @@ namespace Newbie.Repositories.Data
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<RoleArticle> RoleArticles { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseMySql("server=127.0.0.1;user id=root;password=0968983737;database=newbiedb", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.6.5-mariadb"));
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasCharSet("latin1")
@@ -61,14 +70,12 @@ namespace Newbie.Repositories.Data
 
             modelBuilder.Entity<MembersPrivate>(entity =>
             {
-                entity.HasKey(e => e.MemberId)
-                    .HasName("PRIMARY");
+                entity.Property(e => e.MembersprivateId).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<MembersPublic>(entity =>
             {
-                entity.HasKey(e => e.MemberId)
-                    .HasName("PRIMARY");
+                entity.Property(e => e.MemberspublicId).ValueGeneratedNever();
 
                 entity.Property(e => e.Accountname)
                     .UseCollation("utf8mb3_general_ci")
@@ -94,18 +101,6 @@ namespace Newbie.Repositories.Data
             modelBuilder.Entity<Role>(entity =>
             {
                 entity.Property(e => e.RoleId).ValueGeneratedNever();
-
-                entity.HasOne(d => d.Authorization)
-                    .WithMany(p => p.RolesNavigation)
-                    .HasForeignKey(d => d.AuthorizationId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("roles_ibfk_2");
-
-                entity.HasOne(d => d.Member)
-                    .WithMany(p => p.Roles)
-                    .HasForeignKey(d => d.MemberId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("roles_ibfk_1");
             });
 
             modelBuilder.Entity<RoleArticle>(entity =>

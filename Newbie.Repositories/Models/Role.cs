@@ -22,12 +22,5 @@ namespace Newbie.Repositories.Models
         public string MemberId { get; set; }
         [Column("authorization_id", TypeName = "int(11)")]
         public int AuthorizationId { get; set; }
-
-        [ForeignKey(nameof(AuthorizationId))]
-        [InverseProperty("RolesNavigation")]
-        public virtual Authorization Authorization { get; set; }
-        [ForeignKey(nameof(MemberId))]
-        [InverseProperty(nameof(MembersPublic.Roles))]
-        public virtual MembersPublic Member { get; set; }
     }
 }
