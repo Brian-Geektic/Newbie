@@ -7,17 +7,22 @@ using System.Threading.Tasks;
 
 namespace Newbie.Services.Interfaces
 {
-    public interface INewbieServices<T> where T : class
+    public interface INewbieServices
     {
         /// <summary>
         /// 新增CRUD的介面
         /// </summary>
         /// <param name="entity"></param>
-        void Create(T entity);
-        Task<ICollection<T>> GetAllAsync();
-        Task<T> GetAsync(Expression<Func<T, bool>> predicate);
-        void Delete(T entity);
-        void Update(T entity);
-        void SaveChanges();
+        void Create(Project entity);
+        void Delete(Project entity);
+        void Update(Project entity);
+
+        IEnumerable<Project> GetAll();
+        bool IsExists(int id);
+
+        Project GetById(int id);
+        //Task<T> GetAsync(Expression<Func<T, bool>> predicate);
+
+        
     }
 }
