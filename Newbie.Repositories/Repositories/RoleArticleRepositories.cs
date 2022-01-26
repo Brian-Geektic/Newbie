@@ -13,6 +13,10 @@ namespace Newbie.Repositories.Repositories
 
     public class RoleArticleRepositories : NewbieRepositories<RoleArticle>, IRolearticleRepository
     {
+        public RoleArticleRepositories(NewbiedbContext context) : base(context)
+        {
+
+        }
         #region 全部實作
         /*
         private readonly NewbiedbContext _context;

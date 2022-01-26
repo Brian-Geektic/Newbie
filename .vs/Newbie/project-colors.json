@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "99ceb2f9-1c01-4124-a570-807a60f6c33e": {
+      "ProjectGuid": "99ceb2f9-1c01-4124-a570-807a60f6c33e",
+      "DisplayName": "Newbie.Web",
+      "ColorIndex": 0
+    },
+    "ab5c0573-e527-48e5-8997-d4be68d33e26": {
+      "ProjectGuid": "ab5c0573-e527-48e5-8997-d4be68d33e26",
+      "DisplayName": "Newbie.Services",
+      "ColorIndex": 1
+    },
+    "66f2596d-4991-411a-be08-4ee6df2299b9": {
+      "ProjectGuid": "66f2596d-4991-411a-be08-4ee6df2299b9",
+      "DisplayName": "Newbie.Repositories",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

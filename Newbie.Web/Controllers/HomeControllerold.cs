@@ -6,28 +6,28 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Newbie.Repositories.Interfaces;
-using Newbie.Repositories.Repositories;
-using Newbie.Repositories.Models;
-using Newbie.Repositories.Data;
 using System.Data;
+using Newbie.Services.Interfaces;
+using Newbie.Services.Services;
 
 namespace Newbie.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeControllerold : Controller
     {
-        private INewbieRepository<Article> _articleRepository;
-
-        public HomeController()
+        #region 隱藏舊程式碼
+        /*
+        private readonly INewbieServices _newbieServices;
+        public HomeControllerold()
         {
-            this._articleRepository = new NewbieRepositories<Article>(new NewbiedbContext());
+            this._newbieServices = new NewbieServices();
         }
 
         public ActionResult Index()
         {
-            var article = this._articleRepository.GetAll()
-              .OrderByDescending(x => x.ArticleId).ToList();
-            return View(article);
+            var projects = projectService.GetAll();
+            var viewModel = new ProjectListViewModel();
+            viewModel.ProjectList = projects;
+            return View(viewModel);
         }
 
         public ActionResult Details(int? id)
@@ -36,7 +36,7 @@ namespace Newbie.Web.Controllers
                 return RedirectToAction("index");
             else
             {
-                var article = this._articleRepository.GetById(x => x.ArticleId == id.Value);
+                var article = this._newbieServices.GetById(x => x.ArticleId == id.Value);
                 return View(article);
             }
         }
@@ -44,15 +44,8 @@ namespace Newbie.Web.Controllers
         [HttpPost]
         public ActionResult Create(Article article)
         {
-            if (article != null && ModelState.IsValid)
-            {
-                _articleRepository.Create(article);
-                return RedirectToAction("index");
-            }
-            else
-            {
-                return View(article);
-            }
+            var viewModel = new ProjectViewModel();
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -60,7 +53,7 @@ namespace Newbie.Web.Controllers
         {
             if (article != null && ModelState.IsValid)
             {
-                _articleRepository.Update(article);
+                _newbieServices.Update(article);
                 return View(article);
             }
             else
@@ -74,7 +67,7 @@ namespace Newbie.Web.Controllers
                 return RedirectToAction("index");
             else
             {
-                var article = this._articleRepository.GetById(x => x.ArticleId == id.Value);
+                var article = this._newbieServices.GetById(x => x.ArticleId == id.Value);
                 return View(article);
             }
         }
@@ -83,12 +76,12 @@ namespace Newbie.Web.Controllers
         {
             try
             {
-                var article = this._articleRepository.GetById(x => x.ArticleId == id);
-                _articleRepository.Delete(article);
+                var article = this._newbieServices.GetById(x => x.ArticleId == id);
+                _newbieServices.Delete(article);
             }
             catch (DataException)
             {
-                return RedirectToAction("Delete", new { id=id});
+                return RedirectToAction("Delete", new { id = id });
             }
             return RedirectToAction("index");
         }
@@ -103,5 +96,7 @@ namespace Newbie.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        */
+        #endregion
     }
 }

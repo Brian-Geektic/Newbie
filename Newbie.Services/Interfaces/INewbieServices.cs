@@ -8,21 +8,18 @@ using System.Threading.Tasks;
 namespace Newbie.Services.Interfaces
 {
     public interface INewbieServices
-    {
-        /// <summary>
-        /// 新增CRUD的介面
-        /// </summary>
-        /// <param name="entity"></param>
-        void Create(Project entity);
-        void Delete(Project entity);
-        void Update(Project entity);
+    { 
 
-        IEnumerable<Project> GetAll();
-        bool IsExists(int id);
+        #region 舊程式碼
+        /*
+        void Create(TDto dto);
+        void Delete(TDto dto);
+        void Update(TDto dto);
 
-        Project GetById(int id);
-        //Task<T> GetAsync(Expression<Func<T, bool>> predicate);
+        IEnumerable<TDto> GetAll();
+        TDto GetById(int id);
+        */
+        #endregion
 
-        
     }
 }

@@ -4,7 +4,6 @@ D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\bin\Debug\net5.0\Newbie.
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\bin\Debug\net5.0\Newbie.Repositories.dll
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\bin\Debug\net5.0\ref\Newbie.Repositories.dll
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\bin\Debug\net5.0\Newbie.Repositories.pdb
-D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\Newbie.Repositories.csproj.AssemblyReference.cache
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\Newbie.Repositories.GeneratedMSBuildEditorConfig.editorconfig
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\Newbie.Repositories.AssemblyInfoInputs.cache
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\Newbie.Repositories.AssemblyInfo.cs
@@ -13,3 +12,4 @@ D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\Newbie.
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\ref\Newbie.Repositories.dll
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\Newbie.Repositories.pdb
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\Newbie.Repositories.genruntimeconfig.cache
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Repositories\obj\Debug\net5.0\Newbie.Repositories.csproj.AssemblyReference.cache

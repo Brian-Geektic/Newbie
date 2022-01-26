@@ -13,12 +13,6 @@ namespace Newbie.Services.Interfaces
     
     public interface IArticleServices
     {
-        IResult Create(ArticleDto articleDto);
-        IResult Update(ArticleDto articleDto);
-        IResult Delete(int articleId);
-        bool IsExists(int articleId);
-        ArticleDto GetById(int articleId);
-        IEnumerable<ArticleDto> GetAll();
-       
+               
     }
 }

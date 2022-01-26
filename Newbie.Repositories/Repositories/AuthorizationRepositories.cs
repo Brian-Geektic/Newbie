@@ -12,7 +12,11 @@ namespace Newbie.Repositories.Repositories
 {
     public class AuthorizationRepositories : NewbieRepositories<Authorization>, IAuthorizationRepository
     {
-       
+        public AuthorizationRepositories(NewbiedbContext context) : base(context)
+        {
+
+        }
+
         #region 全部實作
         /*
         private readonly NewbiedbContext _context;

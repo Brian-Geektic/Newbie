@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql;
 using Newbie.Repositories.Data;
+using Newbie.Services.Interfaces;
+using Newbie.Services.Services;
 
 namespace Newbie.Web
 {
@@ -31,6 +33,10 @@ namespace Newbie.Web
             {
                 options.UseMySql(Configuration.GetConnectionString("connectNewbie"), ServerVersion.Parse("10.6.5-mariadb"));
             });
+            services.AddScoped<IMembersPublicService, MembersPublicService>();
+            //services.AddScoped<INewbieServices, NewbieServices>();
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +63,7 @@ namespace Newbie.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Member}/{action=Index}/{id?}");
             });
         }
     }

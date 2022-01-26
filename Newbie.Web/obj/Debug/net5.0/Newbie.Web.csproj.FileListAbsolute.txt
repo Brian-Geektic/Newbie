@@ -31,7 +31,6 @@ D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\staticwebassets\
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\Newbie.Web.TagHelpers.input.cache
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\Newbie.Web.TagHelpers.output.cache
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\Newbie.Web.RazorCoreGenerate.cache
-D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -125,3 +124,5 @@ D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\bin\Debug\net5.0\zh-Hans\Microsof
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\bin\Debug\net5.0\AutoMapper.dll
+D:\GeekticCode\NewbieProject\Newbie\Newbie.Web\obj\Debug\net5.0\Razor\Views\Member\Index.cshtml.g.cs

@@ -13,7 +13,7 @@ namespace Newbie.Repositories.Interfaces
         void Create(T entity);
 
         // 取得全部資料        
-        IQueryable<T> GetAll();
+        IEnumerable<T> GetAll();
 
         // 取得單筆資料
         T GetById(Expression<Func<T, bool>> predicate);

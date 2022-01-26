@@ -34,9 +34,9 @@ namespace Newbie.Repositories.Repositories
         }
 
         /// 取得所有資料
-        public IQueryable<T> GetAll()
+        public IEnumerable<T> GetAll()
         {
-            return _context.Set<T>().AsQueryable();
+            return _context.Set<T>();
         }
 
         /// 取得單筆資料,若取得多筆也只傳入第一筆資料

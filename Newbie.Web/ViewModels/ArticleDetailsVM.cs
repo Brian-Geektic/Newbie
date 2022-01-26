@@ -8,7 +8,10 @@ namespace Newbie.Web.ViewModels
 {
     public class ArticleDetailsVM
     {
-        public ArticleDto articleDto { get; set; }
-        
+        public int ArticleId { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string Author { get; set; }
+
     }
 }

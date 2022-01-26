@@ -12,7 +12,10 @@ namespace Newbie.Repositories.Repositories
 {
     public class MembersPublicRepositories : NewbieRepositories<MembersPublic>, IMemberpublicRepository
     {
+        public MembersPublicRepositories(NewbiedbContext context) : base(context)
+        {
 
+        }
         #region 全部實作
         /*
         private readonly NewbiedbContext _context;

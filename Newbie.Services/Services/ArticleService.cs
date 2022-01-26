@@ -14,6 +14,8 @@ namespace Newbie.Services.Services
 {
     public class ArticleService : IArticleServices
     {
+        #region 舊的程式
+        /*
         private INewbieRepository<Article> _newbieRespositories = new NewbieRepositories<Article>();
         ArticleDto articleDto = new ArticleDto();
 
@@ -82,6 +84,21 @@ namespace Newbie.Services.Services
             return this._newbieRespositories.GetAll().Any(x => x.ArticleId == articleDtoId);
         }
 
-       
+        void INewbieServices<ArticleDto>.Create(ArticleDto dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(ArticleDto dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        void INewbieServices<ArticleDto>.Update(ArticleDto dto)
+        {
+            throw new NotImplementedException();
+        }
+        */
+        #endregion
     }
 }
