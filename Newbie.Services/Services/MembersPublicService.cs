@@ -46,8 +46,7 @@ namespace Newbie.Services.Services
 
         public IEnumerable<MemberPublicDto> GetAll()
         {
-            var allmemberpublic = _memberpublicRepository.GetAll();
-            return _mapper.Map<List<MemberPublicDto>>(allmemberpublic);
+            return _mapper.Map<List<MemberPublicDto>>(_memberpublicRepository.GetAll());
         }
 
         public MemberPublicDto GetById(int id)

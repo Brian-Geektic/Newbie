@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +13,9 @@ using Pomelo.EntityFrameworkCore.MySql;
 using Newbie.Repositories.Data;
 using Newbie.Services.Interfaces;
 using Newbie.Services.Services;
+using Newbie.Repositories.Interfaces;
+using Newbie.Repositories.Repositories;
+using AutoMapper;
 
 namespace Newbie.Web
 {
@@ -34,9 +37,15 @@ namespace Newbie.Web
                 options.UseMySql(Configuration.GetConnectionString("connectNewbie"), ServerVersion.Parse("10.6.5-mariadb"));
             });
             services.AddScoped<IMembersPublicService, MembersPublicService>();
-            //services.AddScoped<INewbieServices, NewbieServices>();
-            
-            
+            services.AddScoped<IMemberpublicRepository, MembersPublicRepositories>();
+
+
+            //加入automapper的profile, 並加入服務
+            var mapperconfig = new MapperConfiguration(m => m.AddProfile<MyMappingProfile>());
+            IMapper mapper = mapperconfig.CreateMapper();
+            services.AddSingleton(mapper);
+            //services.AddAutoMapper(typeof(Startup));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -14,6 +14,7 @@ namespace Newbie.Web.Controllers
 {
     public class MemberController : Controller
     {
+        
         protected readonly IMapper _mapper;
         protected readonly IMembersPublicService _membersPublicService;
 
@@ -21,14 +22,13 @@ namespace Newbie.Web.Controllers
         {
             _mapper = mapper;
             _membersPublicService = membersPublicService;
-
+            
         }
 
         public IActionResult Index()
         {
-            var listmemberDto = _membersPublicService.GetAll();
-            _mapper.Map<MemberPublicDetailsVM>(listmemberDto);
-            return View();
+            var listmemberDto = _mapper.Map<List<MemberPublicDetailsVM>>(_membersPublicService.GetAll());
+            return View(listmemberDto);
         }
     }
 }
