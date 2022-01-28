@@ -32,20 +32,31 @@ namespace Newbie.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
+            //加入DB connection string
             services.AddDbContext<NewbiedbContext>(options =>
             {
                 options.UseMySql(Configuration.GetConnectionString("connectNewbie"), ServerVersion.Parse("10.6.5-mariadb"));
             });
-            services.AddScoped<IMembersPublicService, MembersPublicService>();
+
+            #region 加入各介面的interfaces
             services.AddScoped<IMemberpublicRepository, MembersPublicRepositories>();
+            services.AddScoped<IMembersPublicService, MembersPublicService>();
 
+            #endregion
 
-            //加入automapper的profile, 並加入服務
+            #region 加入AutoMapper的profile的方法
+            //逐個加入automapper的profile, 並加入服務
             var mapperconfig = new MapperConfiguration(m => m.AddProfile<MyMappingProfile>());
             IMapper mapper = mapperconfig.CreateMapper();
             services.AddSingleton(mapper);
-            //services.AddAutoMapper(typeof(Startup));
 
+            //把所有的profile丟進addautomapper中,並反射出來
+            //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            //尋找startup所在的assembly並反射出相同位置的所有profile
+            //services.AddAutoMapper(typeof(Startup));
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

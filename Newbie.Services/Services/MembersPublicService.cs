@@ -28,13 +28,42 @@ namespace Newbie.Services.Services
             memberpublicdto.Accountname = memberpublicdto.Accountname;
             memberpublicdto.Firstname = memberpublicdto.Firstname;
             memberpublicdto.Lastname = memberpublicdto.Lastname;
-            memberpublicdto.Nickname = memberpublicdto.Nickname;
+
+            #region 若是沒有輸入暱稱時的判斷
+            if (memberpublicdto.Nickname == null)
+            { memberpublicdto.Nickname = memberpublicdto.Firstname; }
+            else
+            { memberpublicdto.Nickname = memberpublicdto.Nickname; }
+            #endregion
+
             memberpublicdto.Intro = memberpublicdto.Intro;
             memberpublicdto.Joindate = DateTime.Now;
             memberpublicdto.MemberspublicId = memberpublicdto.MemberspublicId; //要再修改成auto-increment
 
             _memberpublicRepository.Create(_mapper.Map<MembersPublic>(memberpublicdto));
             _memberpublicRepository.SaveChanges();
+
+        }
+        public async Task CreateAsync(MemberPublicDto memberpublicdto)
+        {
+            memberpublicdto.MemberId = memberpublicdto.MemberId;
+            memberpublicdto.Accountname = memberpublicdto.Accountname;
+            memberpublicdto.Firstname = memberpublicdto.Firstname;
+            memberpublicdto.Lastname = memberpublicdto.Lastname;
+
+            #region 若是沒有輸入暱稱時的判斷
+            if (memberpublicdto.Nickname == null)
+            { memberpublicdto.Nickname = memberpublicdto.Firstname; }
+            else
+            { memberpublicdto.Nickname = memberpublicdto.Nickname; }
+            #endregion
+
+            memberpublicdto.Intro = memberpublicdto.Intro;
+            memberpublicdto.Joindate = DateTime.Now;
+            memberpublicdto.MemberspublicId = memberpublicdto.MemberspublicId; //要再修改成auto-increment
+
+            _memberpublicRepository.Create(_mapper.Map<MembersPublic>(memberpublicdto));
+            await _memberpublicRepository.SaveChangesAsync();
         }
 
         public void Delete(MemberPublicDto memberpublicdto)
@@ -57,17 +86,33 @@ namespace Newbie.Services.Services
         public void Update(MemberPublicDto memberpublicdto)
         {
             var oldmemberpublic = GetById(memberpublicdto.MemberspublicId);
-            oldmemberpublic.MemberspublicId = memberpublicdto.MemberspublicId; //待改成auto-increment
-            oldmemberpublic.MemberId = memberpublicdto.MemberId;
-            oldmemberpublic.Accountname = memberpublicdto.Accountname;
+            oldmemberpublic.MemberspublicId = oldmemberpublic.MemberspublicId; //待改成auto-increment
+            oldmemberpublic.MemberId = oldmemberpublic.MemberId;
+            oldmemberpublic.Accountname = oldmemberpublic.Accountname;
             oldmemberpublic.Firstname = memberpublicdto.Firstname;
             oldmemberpublic.Lastname = memberpublicdto.Lastname;
             oldmemberpublic.Nickname = memberpublicdto.Nickname;
             oldmemberpublic.Intro = memberpublicdto.Intro;
             oldmemberpublic.Joindate = oldmemberpublic.Joindate;  //如果沒有要變,寫這樣子嗎?
 
-            _memberpublicRepository.Update(_mapper.Map<MembersPublic>(memberpublicdto));
+            _memberpublicRepository.Update(_mapper.Map<MembersPublic>(oldmemberpublic));
             _memberpublicRepository.SaveChanges();
+
+        }
+        public async Task UpdateAsync(MemberPublicDto memberpublicdto)
+        {
+            var oldmemberpublic = GetById(memberpublicdto.MemberspublicId);
+            oldmemberpublic.MemberspublicId = memberpublicdto.MemberspublicId; //待改成auto-increment
+            oldmemberpublic.MemberId = oldmemberpublic.MemberId;
+            oldmemberpublic.Accountname = oldmemberpublic.Accountname;
+            oldmemberpublic.Firstname = memberpublicdto.Firstname;
+            oldmemberpublic.Lastname = memberpublicdto.Lastname;
+            oldmemberpublic.Nickname = memberpublicdto.Nickname;
+            oldmemberpublic.Intro = memberpublicdto.Intro;
+            oldmemberpublic.Joindate = oldmemberpublic.Joindate;  //如果沒有要變,寫這樣子嗎?
+                        
+            _memberpublicRepository.Update(_mapper.Map<MembersPublic>(oldmemberpublic));
+            await _memberpublicRepository.SaveChangesAsync();
 
         }
         public bool IsExisted(string accountname)

@@ -26,6 +26,8 @@ namespace Newbie.Web
             CreateMap<MemberPublicDetailsVM, MemberPublicDto>().ReverseMap();
             CreateMap<RoleArticleDetailsVM, RoleArticleDto>().ReverseMap();
             CreateMap<RoleDetailsVM, RoleDto>().ReverseMap();
+            CreateMap<MemberPublicUpdateVM, MemberPublicDto>().ReverseMap();
+                
 
 
         }

@@ -1,0 +1,63 @@
+﻿@model Newbie.Web.ViewModels.MemberPublicDetailsVM;
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>編輯資料</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MemberspublicId" />
+            <div class="form-group">
+                <label asp-for="MemberId" class="control-label"></label>
+                <input asp-for="MemberId" class="form-control" disabled />
+                @*<span asp-validation-for="MemberId" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="Accountname" class="control-label"></label>
+                <input asp-for="Accountname" class="form-control" disabled />
+                @*<span asp-validation-for="Accountname" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="Firstname" class="control-label"></label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname" class="control-label"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nickname" class="control-label"></label>
+                <input asp-for="Nickname" class="form-control" />
+                <span asp-validation-for="Nickname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Intro" class="control-label"></label>
+                <input asp-for="Intro" class="form-control" />
+                <span asp-validation-for="Intro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Joindate" class="control-label"></label>
+                <input asp-for="Joindate" class="form-control" disabled/>
+                @*<span asp-validation-for="Joindate" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <input type="submit" value="儲存" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">回到清單</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

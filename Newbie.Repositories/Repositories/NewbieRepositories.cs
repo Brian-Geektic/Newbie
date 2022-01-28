@@ -19,8 +19,8 @@ namespace Newbie.Repositories.Repositories
             if (context == null)
                 throw new ArgumentNullException("context");
             this._context = context;
-        } 
-        
+        }
+
 
         /// 新增一筆資料
         public void Create(T entity)
@@ -30,7 +30,6 @@ namespace Newbie.Repositories.Repositories
                 throw new ArgumentNullException("entity");
             }
             _context.Set<T>().Add(entity);
-            SaveChanges();
         }
 
         /// 取得所有資料
@@ -39,10 +38,10 @@ namespace Newbie.Repositories.Repositories
             return _context.Set<T>();
         }
 
-        /// 取得單筆資料,若取得多筆也只傳入第一筆資料
+        /// 取得單筆資料,若取得多筆也只傳入第一筆資料(要加入AsNoTracking)
         public T GetById(Expression<Func<T, bool>> predicate)
         {
-            return _context.Set<T>().FirstOrDefault(predicate);
+            return _context.Set<T>().AsNoTracking().FirstOrDefault(predicate);
         }
 
         /// <summary>
@@ -57,7 +56,6 @@ namespace Newbie.Repositories.Repositories
             }
             //_context.Set<T>().Remove(entity);
             _context.Entry(entity).State = EntityState.Deleted;
-            SaveChanges();
         }
 
         public void Update(T entity)
@@ -68,7 +66,10 @@ namespace Newbie.Repositories.Repositories
             }
             //_context.Set<T>().Update(entity);
             _context.Entry(entity).State = EntityState.Modified;
-            SaveChanges();
+        }
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
         }
 
         public void SaveChanges()

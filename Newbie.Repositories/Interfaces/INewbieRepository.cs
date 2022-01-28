@@ -24,6 +24,7 @@ namespace Newbie.Repositories.Interfaces
         // 更新資料
         void Update(T entity);
 
+        Task SaveChangesAsync();
         void SaveChanges();
     }
 }
